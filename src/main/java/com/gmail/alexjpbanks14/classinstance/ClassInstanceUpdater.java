@@ -7,6 +7,8 @@ import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -52,9 +54,13 @@ public class ClassInstanceUpdater implements Runnable{
 		});
 	}
 	void updateClassInstance(ClassInstanceAdapter adapter){
-		Set<ClassInstance> classes = adapter.getClasses();
+		List<ClassInstance> classes = new LinkedList<>(adapter.getClasses());
 		String classType = adapter.getClassType();
 		String programType = adapter.getProgramType();
-		ClassInstance.find("class_type = ? AND program_type = ?", classType, programType);
+		List<ClassInstance> existing_classes = ClassInstance.find("class_type = ? AND program_type = ?", classType, programType);
+		//TODO not the most efficient, maybe we can use a hashset here?
+		//iterator = classes.listIterator();
+		existing_classes.removeAll(classes);
+		
 	}
 }

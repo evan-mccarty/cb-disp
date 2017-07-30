@@ -95,4 +95,11 @@ public class ClassInstance extends Model{
 		this.setString("program_type", programType);
 	}
 	
+	@Override
+	public boolean equals(Object o){
+		if(o instanceof ClassInstance)
+			return ((ClassInstance)o).getInstanceId().equals(getInstanceId());
+		return false;
+	}
+	
 }
