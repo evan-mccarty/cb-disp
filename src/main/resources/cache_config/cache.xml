@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ehcache:config
+  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+  xmlns:ehcache='http://www.ehcache.org/v3'
+  xsi:schemaLocation="http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core-3.1.xsd">
+
+  <ehcache:cache alias="SocketSessions">
+    <ehcache:key-type>org.eclipse.jetty.websocket.api.Session</ehcache:key-type>
+    <ehcache:value-type>com.gmail.alexjpbanks14.security.SocketAPISession</ehcache:value-type>
+    <ehcache:expiry>
+      <ehcache:ttl unit="days">4</ehcache:ttl> 
+  	</ehcache:expiry>
+    <ehcache:resources>
+      <ehcache:heap unit="entries">1000</ehcache:heap>
+      <!--  <ehcache:offheap unit="MB">20</ehcache:offheap>-->
+    </ehcache:resources>
+  </ehcache:cache>
+  <ehcache:cache alias="SocketSessionAuthorizers">
+    <ehcache:key-type>java.util.UUID</ehcache:key-type>
+    <ehcache:value-type>com.gmail.alexjpbanks14.security.SocketAPISessionAuthorizer</ehcache:value-type>
+    <ehcache:expiry>
+      <ehcache:ttl unit="days">4</ehcache:ttl> 
+  	</ehcache:expiry>
+    <ehcache:resources>
+      <ehcache:heap unit="entries">1000</ehcache:heap>
+      <!--  <ehcache:offheap unit="MB">20</ehcache:offheap>-->
+    </ehcache:resources>
+  </ehcache:cache>
+  <ehcache:cache alias="UserSessions">
+    <ehcache:key-type>java.lang.String</ehcache:key-type>
+    <ehcache:value-type>com.gmail.alexjpbanks14.security.UserSession</ehcache:value-type>
+    <ehcache:expiry>
+      <ehcache:ttl unit="days">4</ehcache:ttl> 
+  	</ehcache:expiry>
+    <ehcache:resources>
+      <ehcache:heap unit="entries">100</ehcache:heap>
+      <!--  <ehcache:offheap unit="MB">20</ehcache:offheap>-->
+    </ehcache:resources>
+  </ehcache:cache>
+</ehcache:config>

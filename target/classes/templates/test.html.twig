@@ -1,0 +1,48 @@
+
+{% extends 'base.html.twig' %}
+
+{% block head %}
+	<title>Pump Controller - Login</title>
+	<script src="/script/socketapi.js"></script>
+	<style>
+	</style>
+	<script>
+		//getSocketInstance();
+		var j;
+		var scopes = ['BASIC_ERROR']
+		getSocketInstance(function (json){
+			handleResult(json);
+			j = json;
+		}, scopes);
+		var envoker = [
+			{   "name":"handleError",
+			    "arg_names" : ["java.lang.String"] 
+			},
+			{   "name":"leet",
+			    "arg_names" : ["derp", "flerp", "cock", "butt"] 
+			}
+		];
+		var socket;
+		function handleResult(session){
+    		var socketAPIScopeSession = new SocketAPIScopeSession();
+    		var handler = function(instance){
+        		this.sendError = function(derp){
+            		console.log(derp);
+            	}
+    		}
+    		session.onerror = function(error){
+        		console.log(error);
+        	};
+        	session.onclose = function(error){
+           		console.log(error);
+        	};
+    		var socketAPIInstanceProvider = new SocketAPIScopeInstanceProvider("BASIC_ERROR", envoker, handler);
+    		var socketAPIInstance = socketAPIInstanceProvider.getInstance(socketAPIScopeSession);
+    		socketAPIScopeSession.registerScope(socketAPIInstance);
+    		socketAPIScopeSession.acceptSession(session);
+    		socket = socketAPIScopeSession;
+		}
+	</script>
+{% endblock %}
+{% block body %}
+{% endblock %}

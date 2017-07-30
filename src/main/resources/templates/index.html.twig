@@ -1,0 +1,14 @@
+
+{% extends 'base.html.twig' %}
+
+{% block head %}
+	<script>
+		var webSocket = new WebSocket("wss://@localhost:4567/secure/derplord?token=aids");
+		webSocket.onmessage = function(event){
+			alert(event.data);
+		};
+	</script>
+{% endblock %}
+{% block body %}
+	
+{% endblock %}

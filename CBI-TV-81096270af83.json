@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "cbi-tv",
+  "private_key_id": "81096270af838fabca866de183639681c3034786",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCTRCX90I/NCKwE\nQBlYQFrt53TXZxGZ2fo3YiX+O459mCP6LB/AQqNTBwdZQyNeJ0u/ehvs2LPxUnuH\nJiGbc55ELgS5ecSAb+dbNpnnaEB7gTADyrZTwjI+Js2OsQQWxidIg/XmNmgSSTtd\nAhB/kplu9YhMFZC3zAWrLnK6rOjG8eJ/HAhYHZQ+E2eJaJMLCABhi1qrE8OvdQfn\n0vV1mgf4L73OIrxo++y1jLzJyrf/KoBdmjut+N5CBkK+hAHJQdZe0QVTfRCmXdsE\nP8H+KWV05ird0sHSF3NT3fu7xoYsNL4Ftk0c7zEi0X7Fgo6FctIjn9Qcapp+NyQ5\nJYY7GpDjAgMBAAECggEADQySWJG/qZmK8zDM2MrnDm1JJ1cXh6xO0CkvGFPQVfpX\ntxtsJX33eUFxBMH+uHaUmd8TlLfvsJgFoHL1XRAbJjZ1A7cG/aHXfHfI874t9zj6\nIgk3K70pn46SU1ewduYluqFldiSRseEcVKr8qZk6EEt1wYF9r9ObwvsxfloY9vEl\n499Fs5U7HIDlw09/Y5O90JdkE6S03ZpdYEYT7opIr6IsQPsv0hHqnDMgN086Wnmg\nx55Y0v2d5O90fENgJvv5RjJJ4uvMJzYa3jaox0IMfvaTge//OdGzFz2+a2lJDlFb\n8d/9RH6o8V1a60oi7DkG13LvNZSABtFkunfPNKhyZQKBgQDOYSFpP9EYyP+Q+/xJ\nXBdnd+hIH7SXtG4t6dYfK4DfNgkGuFMdCMeo8OTE+/nd4XMQJVCOP6jUJKv+6vfU\n4A1gXf97HtWjVsMaToniG6OUL/kk/hRD7Qdp/xN0qTCJyzp3MKkdGG0/LcZ2jixQ\nqkKmKLMoRsgPh78UdItanJCvXwKBgQC2rImpZRDUKjsRZutXnicpp0Kh6N//ergT\nR6NxAoTu7K7sYBRfQoDlV/j/QcXCAhd8J9bOS4EHVck73fUXJ5PU2x/X15QQUQad\nOSilbS4fz4zsG0sWub0+jMbtgEOLO+wBDW/p3eiLeCvAZdetDjtQkg1u1kl1y8j3\npzCGKSrA/QKBgAFZCQrS696pkWG1A5THETAPzGiMLHXBK+cI2+kgM5tBkxWEJqbN\n49/qktPmgV89la7JT5leORAJnUXw6uVtASlb88suDF8gte16DdR4Mb1KAuqG7kLz\nTVUX4Vylrjd4KE2W98PE4RHEjsM/cnKkagMDyQe+TpgrXsgXasGQvDEpAoGAOspk\ns6PXOrEsuXkKHPTFXd56z2kHTk3MmEfiDijlZ4+87E4vwEjC+wzJEj20y6+op0ib\nFWGvcRDm5uGUU5NlPIgZQ3oaKPYqzsbqkfMFeS9vBz3xeKrmgQ8FpsI0+saaOex9\nLCNDCD/wtMcSFpwR8uhOcnF8yvB/CVVBhKwTGnECgYAsD+3NBOxwfEc/puEGaU8O\nJNvHr9OrDqDCia9j5AYaFRKXcGxpElQ3VRSKk5Y2XJtf23I/Ds2xdgGGcH3tBaQB\nVpXG4rJmNqOaG/icSl/eHjtATHv2khoLmgh2ncp01y/asMxm0Qf/d4ym9l74ndXc\nQrYzim2d0lGMI7an5XC47g==\n-----END PRIVATE KEY-----\n",
+  "client_email": "cbi-admin@cbi-tv.iam.gserviceaccount.com",
+  "client_id": "105648876506202113943",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cbi-admin%40cbi-tv.iam.gserviceaccount.com"
+}

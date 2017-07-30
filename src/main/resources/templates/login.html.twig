@@ -1,0 +1,49 @@
+
+{% extends 'base.html.twig' %}
+
+{% block head %}
+	<title>Pump Controller - Login</title>
+	<style>
+		.login{
+			width: 30%;
+			margin: 0 auto;
+			margin-top: 20%;
+			padding: 20px;
+			border: solid 1px lightgrey;
+			border-radius: 3px;
+			box-shadow: 1px 1px 5px 5px lightgrey;
+		}
+		.login-button{
+			margin-top: 5px;
+			width: 100%;
+		}
+		.alert{
+			margin-top: 5%;
+			left: 5%;
+			width: 90%;
+			position: fixed;
+		}
+	</style>
+{% endblock %}
+{% block body %}
+	<div class="content">
+		{% if hasError == true %}
+			<div class="alert alert-danger" role="alert">
+				<strong>{{ errorMessage }}</strong>
+			</div>
+		{% endif %}
+		<div class="login">
+			<form method="POST">
+				<div class="form-group">
+					<label for="username">Username</label>
+					<input id="username" name="username" class="form-control" type="text">
+				</div>
+				<div class="form-group">
+					<label for="password">Password</label>
+					<input id="password" name="password" class="form-control" type="password">
+				</div>
+				<button type="submit" class="btn btn-primary login-button">Login</button>
+			</form>
+		</div>
+	</div>
+{% endblock %}
