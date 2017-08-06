@@ -1,6 +1,8 @@
 package com.gmail.alexjpbanks14.model;
 
 import java.sql.Timestamp;
+import java.util.List;
+import java.util.Map;
 
 import org.javalite.activejdbc.Model;
 import org.javalite.activejdbc.annotations.BelongsTo;
@@ -55,6 +57,12 @@ public class LogEvent extends Model{
 	
 	public void setActionEvent(String actionEvent) {
 		this.setString("event_action", actionEvent);
+	}
+	
+	public static List<Map<String, Object>> getLogEventsGson(Integer page){
+		Integer perPage = 20;
+		Integer offset = page * perPage;
+		return LogEvent.findAll().limit(perPage).offset(offset).toMaps();
 	}
 	
 }

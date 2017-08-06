@@ -59,9 +59,11 @@ import com.gmail.alexjpbanks14.socketapi.SocketAPIScope;
 import com.gmail.alexjpbanks14.socketapi.SocketAPIScopeInstanceFactory;
 import com.gmail.alexjpbanks14.socketapi.envoker.SocketAPIScopeBasicErrorEnvoker;
 import com.gmail.alexjpbanks14.socketapi.envoker.SocketAPIScopeFlagColorEnvoker;
+import com.gmail.alexjpbanks14.socketapi.envoker.SocketAPIScopeLogEventEnvoker;
 import com.gmail.alexjpbanks14.socketapi.envoker.SocketAPIScopeRestrictionsEnvoker;
 import com.gmail.alexjpbanks14.socketapi.handler.SocketAPIScopeBasicErrorHandler;
 import com.gmail.alexjpbanks14.socketapi.handler.SocketAPIScopeFlagColorHandler;
+import com.gmail.alexjpbanks14.socketapi.handler.SocketAPIScopeLogEventHandler;
 import com.gmail.alexjpbanks14.socketapi.handler.SocketAPIScopeRestrictionsHandler;
 import com.gmail.alexjpbanks14.socketapi.permission.SocketAPIScopeGlobalPermission;
 import com.gmail.alexjpbanks14.template.Template;
@@ -263,6 +265,7 @@ public class CBI_TV {
 		scopeFactory.registerScope(SocketAPIScope.BASIC_ERROR, SocketAPIScopeBasicErrorHandler.class, SocketAPIScopeBasicErrorEnvoker.class, new SocketAPIScopeGlobalPermission());
 		scopeFactory.registerScope(SocketAPIScope.FLAG_COLOR, SocketAPIScopeFlagColorHandler.class, SocketAPIScopeFlagColorEnvoker.class, new SocketAPIScopeGlobalPermission());
 		scopeFactory.registerScope(SocketAPIScope.RESTRICTION, SocketAPIScopeRestrictionsHandler.class, SocketAPIScopeRestrictionsEnvoker.class, new SocketAPIScopeGlobalPermission());
+		scopeFactory.registerScope(SocketAPIScope.LOG_EVENT, SocketAPIScopeLogEventHandler.class, SocketAPIScopeLogEventEnvoker.class, new SocketAPIScopeGlobalPermission());
 	}
 	
 	public void setupCacheHolders(){

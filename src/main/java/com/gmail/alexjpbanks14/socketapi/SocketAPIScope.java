@@ -3,7 +3,7 @@ package com.gmail.alexjpbanks14.socketapi;
 import java.util.EnumSet;
 
 public enum SocketAPIScope {
-	BASIC_ERROR, FLAG_COLOR, RESTRICTION;
+	BASIC_ERROR, FLAG_COLOR, RESTRICTION, LOG_EVENT;
 	public static EnumSet<SocketAPIScope> parse(String args) throws IllegalArgumentException{
 		EnumSet<SocketAPIScope> scopes = EnumSet.noneOf(SocketAPIScope.class);
 		if(args == null)

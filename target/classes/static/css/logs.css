@@ -1,0 +1,49 @@
+table{
+    padding-top: 0px;
+}
+td{
+    vertical-align: top;
+    background-color: #d3dded;
+}
+#restrictions table{
+    width: 100%;
+    margin: auto;
+}
+.button-enabled{
+    color: red;
+}
+.button-disabled{
+    color: black;
+}
+.restrictions-custom{
+    display: block;
+}
+.unmarked{
+
+}
+.marked{
+	color: orange;
+}
+#program p {
+    font: 12pt Arial;
+}
+.restrictionhistory{
+	
+}
+.tableleft{
+	float: left;
+}
+.tableright{
+	float: right;
+}
+h3{
+    font: 15pt Arial;
+    color: #043a91;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+button{
+    font: 1vw arial;
+    width: 14.5vw;
+    text-align: center;
+}
