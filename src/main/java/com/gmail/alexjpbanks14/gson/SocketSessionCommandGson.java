@@ -10,6 +10,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonPrimitive;
@@ -18,12 +19,15 @@ import com.google.gson.JsonSerializer;
 
 public class SocketSessionCommandGson implements JsonDeserializer<SocketAPICommand>, JsonSerializer<SocketAPICommand>{
 	
-	public static final Gson instance = new GsonBuilder().registerTypeAdapter(SocketAPICommand.class, new SocketSessionCommandGson()).create();
+	public static final Gson instance = new GsonBuilder().serializeNulls().registerTypeAdapter(SocketAPICommand.class, new SocketSessionCommandGson()).create();
 	
 	@Override
 	public JsonElement serialize(SocketAPICommand src, Type typeOfSrc, JsonSerializationContext context) {
 		JsonObject serialized = new JsonObject();
-		serialized.add("command_name", new JsonPrimitive(src.commandName));
+		if(src.commandName == null)
+			serialized.add("command_name", null);
+		else
+			serialized.add("command_name", new JsonPrimitive(src.commandName));
 		serialized.add("command_scope", new JsonPrimitive(src.scope.name()));
 		JsonArray argumentArray = new JsonArray();
 		for(Object argument : src.commandArguments){
@@ -34,6 +38,12 @@ public class SocketSessionCommandGson implements JsonDeserializer<SocketAPIComma
 			argumentArray.add(argumentObject);
 		}
 		serialized.add("command_arguments", argumentArray);
+		serialized.add("has_callback", new JsonPrimitive(src.hasCallback));
+		serialized.add("is_callback", new JsonPrimitive(src.isCallback));
+		if(src.callbackId == null)
+			serialized.add("callback_id", JsonNull.INSTANCE);
+		else
+			serialized.add("callback_id", new JsonPrimitive(src.callbackId));
 		return serialized;
 	}
 
@@ -60,7 +70,12 @@ public class SocketSessionCommandGson implements JsonDeserializer<SocketAPIComma
 			Object commandArgument = instance.fromJson(argument, argumentClazz);
 			commandArguments[i] = commandArgument;
 		}
-		return new SocketAPICommand(commandScope, commandName, commandArguments);
+		Boolean hasCallback = serialized.get("has_callback").getAsBoolean();
+		Boolean isCallback = serialized.get("is_callback").getAsBoolean();
+		System.out.println(serialized.get("callback_id"));
+		System.out.println(serialized.get("callback_id").isJsonNull());
+		Long callbackId = serialized.get("callback_id").isJsonNull() ? null : serialized.get("callback_id").getAsLong();
+		return new SocketAPICommand(commandScope, commandName, commandArguments, hasCallback, isCallback, callbackId);
 	}
 	
 	

@@ -14,9 +14,12 @@ import java.time.format.DateTimeFormatter;
 import java.util.Collections;
 import java.util.Date;
 import java.util.EnumSet;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.TimeZone;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.dbcp.BasicDataSource;
@@ -49,18 +52,30 @@ public class Test {
 		com.google.api.services.calendar.model.Calendar calendarInstance = calendar.calendars().get("community-boating.org_3lrgpalth1huovkki81uosqo2c@group.calendar.google.com").execute();
 		System.out.println(calendarInstance.getSummary());*/
 		
-		ClassInstanceUpdater updater = new ClassInstanceUpdater(1);
-		
-		updater.addScheduleAtTime(ZonedDateTime.now(), LocalTime.of(1, 44, 1));
-		updater.addSchedule(0, 2, TimeUnit.SECONDS);
-		
-		System.out.println(TimeUnit.DAYS.toMillis(1));
-		
 		CBI_TVProperties.loadFromFile("config.properties");
 		
 		connectToSQL();
 		
 		Base.open(datasource);
+		
+		ClassInstance instance2 = ClassInstance.create();
+		ClassInstance instance3 = ClassInstance.create();
+		instance2.setInstanceId("butt");
+		instance3.setInstanceId("butt");
+		Set<ClassInstance> instances = new HashSet<>();
+		instances.add(instance2);
+		System.out.println(instances.contains(instance3));
+		
+		
+		ScheduledExecutorService service = Executors.newScheduledThreadPool(4);
+		
+		
+		ClassInstanceUpdater updater = new ClassInstanceUpdater(service, TimeZone.getDefault());
+		
+		//updater.addScheduleAtTime(ZonedDateTime.now(), LocalTime.of(1, 44, 1));
+		//updater.addSchedule(0, 2, TimeUnit.SECONDS);
+		
+		System.out.println(TimeUnit.DAYS.toMillis(1));
 		
 		//UserGroup group = UserGroup.findFirst("id = 1");
 		
@@ -126,10 +141,10 @@ public class Test {
 		Events events = api.getCalendar().events().list("community-boating.org_3lrgpalth1huovkki81uosqo2c@group.calendar.google.com")
 		.setMaxResults(10).setTimeMin(now).setTimeMax(later).setSingleEvents(true).execute();
 		//System.out.println(now);
-		ClassInstanceGoogleCalendarAdapter adapter = new ClassInstanceGoogleCalendarAdapter(api, "community-boating.org_3lrgpalth1huovkki81uosqo2c@group.calendar.google.com", TimeZone.getDefault());
+		ClassInstanceGoogleCalendarAdapter adapter = new ClassInstanceGoogleCalendarAdapter(api, "community-boating.org_3lrgpalth1huovkki81uosqo2c@group.calendar.google.com");
 		List<com.google.api.services.calendar.model.Event> eventList = events.getItems();
 		//System.out.println(events.size());
-		Set<ClassInstance> classes = adapter.getClasses();
+		List<ClassInstance> classes = adapter.getClasses(ZonedDateTime.now());
 		//System.out.println(adapter.getClasses().size());
 		System.out.println("classes" + classes.size());
 		for(com.google.api.services.calendar.model.Event event : eventList){
@@ -161,7 +176,7 @@ public class Test {
 		//Gson gson = new GsonBuilder().registerTypeAdapter(SocketAPIComamnd.class, customDeserialized)
 		
 		SocketAPIScopeInstanceFactory factory = new SocketAPIScopeInstanceFactory();
-		factory.registerScope(SocketAPIScope.TEST, testHandler.class, testEnvoker.class, new SocketAPIScopeGlobalPermission());		//ClassInstanceCBIAPIAdapter adapter = new ClassInstanceCBIAPIAdapter(url);
+		factory.registerScope(SocketAPIScope.FLAG_COLOR, testHandler.class, testEnvoker.class, new SocketAPIScopeGlobalPermission());		//ClassInstanceCBIAPIAdapter adapter = new ClassInstanceCBIAPIAdapter(url);
 		//SocketAPIScopeInstance<testHandler, testEnvoker> instance = factory.getInstance(SocketAPIScope.TEST, testHandler.class, testEnvoker.class);
 		//System.out.println(instance.getEnvokerInstance().doSomething());
 		//SocketAPIScopeEnvokerProxy proxy = new SocketAPIScopeEnvokerProxy();
@@ -197,8 +212,8 @@ public class Test {
 		
 		System.out.println(scopes.toString());
 		
-		SocketAPICommand command = new SocketAPICommand(null, null, null);
-		command.scope = SocketAPIScope.TEST;
+		SocketAPICommand command = new SocketAPICommand(null, null, null, null, null, null);
+		command.scope = SocketAPIScope.FLAG_COLOR;
 		
 		
 		Gson gson = new Gson();

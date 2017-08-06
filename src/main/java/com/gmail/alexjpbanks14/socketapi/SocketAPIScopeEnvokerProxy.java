@@ -19,7 +19,7 @@ public class SocketAPIScopeEnvokerProxy implements InvocationHandler{
 	
 	@Override
 	public Object invoke(Object arg0, Method arg1, Object[] arg2) throws Throwable {
-		SocketAPICommand command = new SocketAPICommand(scope, arg1.getName(), arg2);
+		SocketAPICommand command = new SocketAPICommand(scope, arg1.getName(), arg2, false, false, null);
 		try{
 			session.sendCommand(command);
 			System.out.println(command);

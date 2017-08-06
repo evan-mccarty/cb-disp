@@ -1,0 +1,5 @@
+package com.gmail.alexjpbanks14.events;
+
+public enum EventType {
+	CLASS_INSTANCE_UPDATE, FLAG_COLOR_UPDATE, RESTRICTIONS_UPDATE, RESTRICTION_STATE_HISTORY_UPDATE;
+}

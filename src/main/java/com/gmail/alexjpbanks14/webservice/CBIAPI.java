@@ -12,6 +12,7 @@ import java.net.URLEncoder;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
+import java.util.TimeZone;
 
 import com.gmail.alexjpbanks14.exception.api.CBIClassInstanceAPIInvalidResponseException;
 import com.gmail.alexjpbanks14.exception.api.CBIClassInstanceAPIUnchangedException;
@@ -19,7 +20,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonSyntaxException;
 
-public class CBIClassInstanceAPI {
+public class CBIAPI {
 	
 	private Gson gson;
 	private DateTimeFormatter dateFormat;
@@ -28,12 +29,12 @@ public class CBIClassInstanceAPI {
 	public static final int READ_TIMEOUT = 5000;
 	public static final int CONNECTION_TIMEOUT = 5000;
 	
-	public static final CBIClassInstanceAPI defaultInstance = new CBIClassInstanceAPI();
+	public static final CBIAPI defaultInstance = new CBIAPI();
 	
-	public static CBIClassInstanceAPI getDefaultInstance() {
+	public static CBIAPI getDefaultInstance() {
 		return defaultInstance;
 	}
-	public CBIClassInstanceAPI(){
+	public CBIAPI(){
 		this.gson = new GsonBuilder().create();
 		dateFormat = DateTimeFormatter.ofPattern("MM/dd/yyyy");
 	}
@@ -41,7 +42,6 @@ public class CBIClassInstanceAPI {
 	public HttpURLConnection loadJson(String etag, URL url, ZonedDateTime time) throws IOException{
 		HashMap<String, String> parameters = new HashMap<>();
 		String formattedDate = dateFormat.format(time);
-		System.out.println(formattedDate);
 		parameters.put("startDate", formattedDate);
 		url = addToURL(url, getParameterString(parameters));
 		HttpURLConnection connection = (HttpURLConnection)url.openConnection();
@@ -91,9 +91,9 @@ public class CBIClassInstanceAPI {
 		return new URL(url.getProtocol(), url.getHost(), url.getPort(), url.getFile() + toAdd);
 	}
 	
-	public CBClassJsonDataHolder getCBClassJsonData(String etag, URL url) throws IOException,
+	public CBClassJsonDataHolder getCBClassJsonData(String etag, URL url, ZonedDateTime zone) throws IOException,
 		 CBIClassInstanceAPIUnchangedException, CBIClassInstanceAPIInvalidResponseException, JsonSyntaxException{
-		HttpURLConnection connection = loadJson(etag, url, ZonedDateTime.now().plusDays(1));
+		HttpURLConnection connection = loadJson(etag, url, zone);
 		if(connection.getResponseCode() == 200){
 			BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 			try{CBClassJsonDataHolder data = gson.fromJson(reader, CBClassJsonDataHolder.class);
@@ -104,6 +104,7 @@ public class CBIClassInstanceAPI {
 				throw e;
 			}
 		}else if(connection.getResponseCode() == 304){
+			System.out.println("Hasetagissue" + connection.getHeaderField("Etag"));
 			throw new CBIClassInstanceAPIUnchangedException("Json File not changed");
 		}else{
 			throw new CBIClassInstanceAPIInvalidResponseException("Response code was not valid");
@@ -118,7 +119,7 @@ public class CBIClassInstanceAPI {
 	public class CBClassJsonRowsHolder{
 		public String[][] rows;
 		public CBClassJsonMetaData[] metaData;
-		public String cacheExpires;
+		public String $cacheExpires;
 	}
 	
 	public class CBClassJsonMetaData{

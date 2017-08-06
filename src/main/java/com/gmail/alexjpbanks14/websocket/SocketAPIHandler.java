@@ -4,6 +4,7 @@ import java.util.EnumSet;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 import org.eclipse.jetty.websocket.api.Session;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketClose;
@@ -28,6 +29,7 @@ public class SocketAPIHandler {
 		Map<String, List<String>> paramMaps = session.getUpgradeRequest().getParameterMap();
 		String authToken = getParameterValue(paramMaps, "authToken");
 		UUID sessionId = UUID.fromString(getParameterValue(paramMaps, "sessionId"));
+		session.setIdleTimeout(TimeUnit.HOURS.toMillis(24));
 		EnumSet<SocketAPIScope> scopes = null;
 		try{
 			scopes = SocketAPIScope.parse(getParameterValue(paramMaps, "scopes"));
@@ -62,11 +64,11 @@ public class SocketAPIHandler {
 	
 	@OnWebSocketClose
 	public void close(Session session, int statusCode, String reason){
-		
+		CBI_TV.getInstance().socketManager.removeSocket(session);
 	}
 	
 	@OnWebSocketMessage
-	public void message(Session session, String message) throws Exception{
+	public void message(Session session, String message) throws Exception {
 		SocketAPISession instance = CBI_TV.getInstance().socketManager.getSessionInstance(session);
 		try{
 			SocketAPICommand command = SocketSessionCommandGson.instance.fromJson(message, SocketAPICommand.class);

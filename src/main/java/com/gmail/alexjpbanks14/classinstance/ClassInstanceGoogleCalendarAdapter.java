@@ -4,9 +4,8 @@ import java.io.IOException;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
-import java.util.LinkedHashSet;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 import java.util.TimeZone;
 
 import com.gmail.alexjpbanks14.model.ClassInstance;
@@ -20,27 +19,24 @@ public class ClassInstanceGoogleCalendarAdapter extends ClassInstanceAdapter {
 	private GoogleAPI api;
 	private String lastETag;
 	private String calendarId;
-	private TimeZone zone;
 	
-	public ClassInstanceGoogleCalendarAdapter(GoogleAPI api, String calendarId, TimeZone zone){
+	public ClassInstanceGoogleCalendarAdapter(GoogleAPI api, String calendarId){
 		super("derp", "derp");
 		this.api = api;
 		this.calendarId = calendarId;
-		this.zone = zone;
 	}
 	
-	public Set<ClassInstance> getClasses(){
-		//TODO make this use global time zone
-		ZonedDateTime now = ZonedDateTime.now(zone.toZoneId());
-		Set<ClassInstance> classInstances = new LinkedHashSet<>();
+	public LinkedList<ClassInstance> getClasses(ZonedDateTime time){
+		//ZonedDateTime now = ZonedDateTime.now(zone.toZoneId());
+		LinkedList<ClassInstance> classInstances = new LinkedList<>();
 		try	{
-			Events events = api.getCalendarEventsForToday(calendarId, lastETag, now);
+			Events events = api.getCalendarEventsForToday(calendarId, lastETag, time);
 			this.lastETag = events.getEtag();
 			List<Event> eventList = events.getItems();
 			for(Event event : eventList){
 				//TODO fix this
-				ClassInstance instance = parseInformation(event, now.getZone());
-				classInstances.add(parseInformation(event, now.getZone()));
+				//ClassInstance instance = parseInformation(event, now.getZone());
+				classInstances.add(parseInformation(event, time.getZone()));
 			}
 			return classInstances;
 		}

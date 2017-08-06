@@ -1,6 +1,7 @@
 package com.gmail.alexjpbanks14.classinstance;
 
-import java.util.Set;
+import java.time.ZonedDateTime;
+import java.util.LinkedList;
 
 import com.gmail.alexjpbanks14.model.ClassInstance;
 
@@ -48,6 +49,6 @@ public abstract class ClassInstanceAdapter {
 		this.programType = programType;
 	}
 	
-	public abstract Set<ClassInstance> getClasses();
+	public abstract LinkedList<ClassInstance> getClasses(ZonedDateTime time);
 	
 }

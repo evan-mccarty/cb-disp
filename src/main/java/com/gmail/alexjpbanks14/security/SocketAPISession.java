@@ -16,6 +16,10 @@ import com.gmail.alexjpbanks14.socketapi.SocketAPIScopeEnvoker;
 import com.gmail.alexjpbanks14.socketapi.SocketAPIScopeHandler;
 import com.gmail.alexjpbanks14.socketapi.SocketAPIScopeInstance;
 import com.gmail.alexjpbanks14.socketapi.envoker.SocketAPIScopeBasicErrorEnvoker;
+import com.gmail.alexjpbanks14.socketapi.envoker.SocketAPIScopeFlagColorEnvoker;
+import com.gmail.alexjpbanks14.socketapi.envoker.SocketAPIScopeRestrictionsEnvoker;
+import com.gmail.alexjpbanks14.socketapi.handler.SocketAPIScopeFlagColorHandler;
+import com.gmail.alexjpbanks14.socketapi.handler.SocketAPIScopeRestrictionsHandler;
 
 public class SocketAPISession{
 	
@@ -45,13 +49,23 @@ public class SocketAPISession{
 	}
 	@SuppressWarnings("unchecked")
 	public <Handler extends SocketAPIScopeHandler, Envoker extends SocketAPIScopeEnvoker> SocketAPIScopeInstance<Handler, Envoker> getInstance(SocketAPIScope scope){
-		return (SocketAPIScopeInstance<Handler, Envoker>)scopeInstances.get(scope);
+		if(this.hasScope(scope))
+			return (SocketAPIScopeInstance<Handler, Envoker>)scopeInstances.get(scope);
+		else
+			throw new RuntimeException("Scope was attempted to be accessed but had no active instance");
+		//TODO fix this to use real custom throwable
 	}
 	public boolean hasScope(SocketAPIScope scope){
 		return scopeInstances.containsKey(scope);
 	}
 	public SocketAPIScopeInstance<SocketAPIScopeHandler, SocketAPIScopeBasicErrorEnvoker> getBasicErrorEnvoker(){
 		return this.getInstance(SocketAPIScope.BASIC_ERROR);
+	}
+	public SocketAPIScopeInstance<SocketAPIScopeFlagColorHandler, SocketAPIScopeFlagColorEnvoker> getFlagUpdateScope(){
+		return this.getInstance(SocketAPIScope.FLAG_COLOR);
+	}
+	public SocketAPIScopeInstance<SocketAPIScopeRestrictionsHandler, SocketAPIScopeRestrictionsEnvoker> getRestrictionsScope(){
+		return this.getInstance(SocketAPIScope.RESTRICTION);
 	}
 	public SocketAPISessionAuthorizer getAuthorizer() {
 		return authorizer;
@@ -73,7 +87,21 @@ public class SocketAPISession{
 		String methodName = command.commandName;
 		Class[] classes = getClassesFromCommand(command);
 		Method method = handler.getClass().getMethod(methodName, classes);
-		method.invoke(handler, command.commandArguments);
+		Object response = method.invoke(handler, command.commandArguments);
+		if(command.hasCallback) {
+			Object[] responseParameters;
+			if(method.getReturnType() != null)
+				responseParameters = new Object[] { response };
+			else
+				responseParameters = new Object[0];
+			SocketAPICommand responseCommand = new SocketAPICommand(command.scope, null, responseParameters, false, true, command.callbackId);
+			try {
+				this.sendCommand(responseCommand);
+			} catch (IOException e) {
+				e.printStackTrace();
+				this.sendErrorIfPossible(e.getMessage());
+			}
+		}
 	}
 		
 	@SuppressWarnings("rawtypes")

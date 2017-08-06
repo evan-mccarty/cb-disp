@@ -13,4 +13,8 @@ public class SocketAPIScopeBasicErrorHandler extends SocketAPIScopeHandler{
 		System.out.println("BUTTHOLE" + message);
 	}
 	
+	public Integer getInt() {
+		return 1;
+	}
+	
 }

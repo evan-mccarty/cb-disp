@@ -1,0 +1,58 @@
+
+{% extends 'base.html.twig' %}
+
+{% set nav_items = { "dashboard" : {src : "/img/dashboard.png", path : "/controlpanel/dashboard.html"},
+                     "restrictions" :  {src : "/img/restrictions.png", path : "/controlpanel/restrictions.html"},
+                     "classes" :  {src : "/img/classes.png", path : "/controlpanel/classes.html"},
+                     "logs" :  {src : "/img/logs.png", path : "/controlpanel/logs.html"},
+                     "users" :  {src : "/img/users.png", path : "/controlpanel/users.html"},
+                     "settings" :  {src : "/img/settings.png", path : "/controlpanel/settings.html"},
+                     "setup" :  {src : "/img/setup.png", path : "/controlpanel/setup.html"},
+                     "help" :  {src : "/img/help.png", path : "/controlpanel/help.html"}
+ } %}
+
+{% block head %}
+	<title>{{ title }}</title>
+	<link rel="stylesheet" href="/css/controlPanel.css" type="text/css" />
+	<script src="/script/socketapi.js"></script>
+	<script src="/script/controlpanel.js"></script>
+	{% block head_ %}
+	{% endblock %}
+{% endblock %}
+{% block body %}
+	<h1>Display Control Panel</h1>
+    <nav class="navbar navbar-toggleable-md">
+      	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      		<span class="navbar-toggler-icon"></span>
+      	</button>
+      	<div class="nav collapse navbar-collapse" id="navbarNavAltMarkup">
+      		<div class="status">
+      			<ul class="navbar-nav">
+      				<li class="nav-item active">
+                		<img src="/img/logo1.png" height="116px" />
+            		</li>
+            		<li class="nav-item active">
+                		<img id="cb_flag_img" src="/img/black.png" height="116px" />
+            		</li>
+      			</ul>
+      		</div>
+      		<ul class="navbar-nav ml-auto">
+            	{% for key, value in nav_items %}
+            		<li class="nav-item active">
+                		<a class="nav-link" href="{{ value.path }}">
+                			<img {% if selected == key %}style="background:#D3DDED;" {% endif %}src="{{ value.src }}" />
+                		</a>
+            		</li>
+            	{% endfor %}
+            </ul>
+    	</div>
+    </nav>
+    <div class="content">
+    	{% block content %}
+    	{% endblock %}
+    </div>
+    <div class="support">
+        <a id="help" href="">Help</a>
+        <a id="issue" href="mailto:evan@community-boating.org?Subject=Control%20Panel%20Bug%20Restrictions">Report an Issue</a>
+    </div>
+{% endblock %}

@@ -40,17 +40,6 @@ public class SocketAPISessionManager {
 		//manager.createCache(CACHE_NAME, CacheConfigurationBuilder.newCacheConfigurationBuilder(UUID.class, ))
 		socketSessionAuthorizers = manager.getCache("SocketSessionAuthorizers", UUID.class, SocketAPISessionAuthorizer.class);
 		this.factory = factory;
-		Timer timer = new Timer();
-		timer.schedule(new TimerTask(){
-
-			@Override
-			public void run() {
-				SocketAPISessionManager.this.socketSessionsCache.forEach((a) -> {
-					a.getValue().getBasicErrorEnvoker().getEnvokerInstance().sendError("testing error stuffs");
-				});
-			}
-			
-		}, 0, 10000);
 	}
 	
 	public SocketAPISessionAuthorizer requestSession(UserSession userSession){
@@ -89,6 +78,19 @@ public class SocketAPISessionManager {
 				});
 		});
 		return sessionInstance;
+	}
+	
+	public void removeSocket(Session session) {
+		this.socketSessionsCache.remove(session);
+	}
+	
+	public List<SocketAPISession> getSessionsByScope(SocketAPIScope scope){
+		List<SocketAPISession> sessions = new LinkedList<SocketAPISession>();
+		this.socketSessionsCache.forEach((a) -> {
+			if(a.getValue().hasScope(scope))
+				sessions.add(a.getValue());
+		});
+		return sessions;
 	}
 	
 	public SocketAPISession getSessionInstance(Session session){

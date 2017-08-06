@@ -16,10 +16,12 @@
 		}, scopes);
 		var envoker = [
 			{   "name":"handleError",
+				"has_callback" : false,
 			    "arg_names" : ["java.lang.String"] 
 			},
-			{   "name":"leet",
-			    "arg_names" : ["derp", "flerp", "cock", "butt"] 
+			{   "name":"getInt",
+				"has_callback" : true,
+			    "arg_names" : [] 
 			}
 		];
 		var socket;

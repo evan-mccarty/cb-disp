@@ -1,0 +1,31 @@
+
+{% extends 'controlpanelbase.html.twig' %}
+
+{% set title = "Restrictions" %}
+{% set selected = "restrictions" %}
+
+{% block head_ %}
+	<link rel="stylesheet" href="/css/restrictions.css" type="text/css" />
+	<script src="/script/restriction.js">
+	</script>
+{% endblock %}
+
+{% block content %}
+	<div id="restrictions">
+	</div>
+	<div id="restrictionhistory">
+		<table id="restrictionhistoryleft" class="tableleft restrictionhistory">
+			<tr>
+				<th><p>Restrictions Enabled</p></th>
+				<th><p>Time</p></th>
+			</tr>
+		</table>
+		<table id="restrictionhistoryright" class="tableright restrictionhistory">
+			<tr>
+				<th><p>Restrictions Disabled</p></th>
+				<th><p>Time</p></th>
+				<th><p>Time</p></th>
+			</tr>
+		</table>
+	</div>
+{% endblock %}
