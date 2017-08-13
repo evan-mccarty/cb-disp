@@ -117,10 +117,12 @@ function SocketAPIScopeInstance(scope, socketAPIScopeSession){
 SocketAPIScopeInstance.prototype.sendCommand = function sendCommand(name, callback, args, argNames){
 	var scope = this.scope;
 	var callbackFunction = null;
+	console.log(args);
 	if(callback){
 		callbackFunction = args[args.length - 1];
-		args = args.splice(0, -1);
+		args.splice(-1, 1);
 	}
+	console.log(args);
 	var commandArgs = [];
 	for(var i = 0; i < argNames.length; i++){
 		var commandArg = args[i];

@@ -36,8 +36,8 @@ public class ClassInstanceCBIAPIAdapter extends ClassInstanceAdapterExpire {
 	private DateTimeFormatter dateFormatter;
 	private DateTimeFormatter timeFormatter;
 	
-	public ClassInstanceCBIAPIAdapter(String classType, String programType, URL jsonURL, TimeZone timezone, Duration offset){
-		super(classType, programType, offset);
+	public ClassInstanceCBIAPIAdapter(String classType, String programType, URL jsonURL, TimeZone timezone, Duration offset, Duration failed){
+		super(classType, programType, offset, failed);
 		this.jsonURL = jsonURL;
 		this.lastETag = new String();
 		this.dateFormatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
@@ -58,6 +58,7 @@ public class ClassInstanceCBIAPIAdapter extends ClassInstanceAdapterExpire {
 			}
 			return classInstances;
 		} catch (CBIClassInstanceAPIUnchangedException e) {
+			this.setNextUpdate(time.plus(this.getFailed()));
 			return null;
 		} catch (Exception e) {
 			setException(e);

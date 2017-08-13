@@ -1,87 +1,98 @@
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\model\RestrictionType.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\CBI_TV\testEnvoker.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\routes\TwigRoute.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\exception\session\UserSessionInvalidPasswordException.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\classinstance\ClassInstanceGoogleCalendarAdapter.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\classinstance\ClassInstanceAdapterExpire.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\classinstance\ClassInstanceUpdater.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\socketapi\SocketAPIScopeEnvoker.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\terminal\ShellEventHandler.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\socketapi\envoker\SocketAPIScopeFlagColorEnvoker.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\socketapi\SocketAPICommandFactory.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\model\RestrictionState.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\socketapi\SocketAPIScopeEnvokerProxy.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\CBI_TV\testHandler.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\template\Template.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\terminal\Shell.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\model\User.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\security\PasswordUtil.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\exception\socket\SocketSessionInvalidTokenException.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\events\RestrictionsUpdateEvent.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\socketapi\permission\SocketAPIScopeGlobalPermission.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\model\ClassInstance.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\routes\ControlPanelLogsRoute.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\routes\ControlPanelRestrictionsRoute.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\websocket\SocketAPIHandler.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\routes\ControlPanelHelpRoute.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\security\SocketAPISessionAuthorizer.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\CBI_TV\CBI_TV.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\events\EventHandler.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\exception\session\UserSessionException.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\socketapi\handler\SocketAPIScopeRestrictionsHandler.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\routes\ControlPanelUsersRoute.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\model\UserGroup.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\events\ClassInstanceUpdateEvent.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\exception\socket\SocketSessionException.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\gson\SocketSessionCommandGson.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\routes\ControlPanelDashboardRoute.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\exception\socket\SocketSessionAPIInvalidPermissionException.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\security\UserSession.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\socketapi\SocketAPIScopeInstanceFactory.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\socketapi\handler\SocketAPIScopeBasicErrorHandler.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\socketapi\SocketAPIInstance.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\routes\TestRoute.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\model\Restriction.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\routes\ControlPanelSetupRoute.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\socketapi\handler\SocketAPIScopeFlagColorHandler.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\flagcolor\FlagColorFetcher.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\socketapi\envoker\SocketAPIScopeBasicErrorEnvoker.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\socketapi\SocketAPIScopeInstance.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\socketapi\permission\SocketAPIScopePermission.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\exception\socket\SocketSessionAPIUnregisteredScopeException.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\exception\session\UserSessionUnknownUsernameException.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\security\SocketAPISession.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\classinstance\ClassInstanceAdapter.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\exception\socket\SocketSessionUnknownUUIDException.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\socketapi\SocketAPIScope.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\CBI_TV\CBI_TVRoutes.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\exception\api\CBIClassInstanceAPIInvalidResponseException.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\events\EventType.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\webservice\CBIAPI.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\webservice\GoogleAPI.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\socketapi\SocketAPICommand.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\form\FormElement.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\routes\ControlPanelClassesRoute.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\terminal\ShellEvent.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\exception\socket\SocketSessionConsumedException.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\flagcolor\FlagColor.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\CBI_TV\Test.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\events\Event.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\events\FlagColorUpdateEvent.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\routes\socketinstance\SocketInstanceRoute.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\events\EventManager.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\socketapi\envoker\SocketAPIScopeRestrictionsEnvoker.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\model\Permission.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\security\UserSessionManager.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\classinstance\ClassInstanceCBIAPIAdapter.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\CBI_TV\CBI_TVProperties.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\exception\socket\SocketSessionExpiredException.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\routes\ControlPanelSettingsRoute.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\events\RestrictionStateHistoryUpdateEvent.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\CBI_TV\TestObject.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\exception\api\CBIClassInstanceAPIUnchangedException.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\security\SocketAPISessionManager.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\restriction\RestrictionUpdater.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\routes\LoginRoute.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\socketapi\handler\TestjsadklfjklasdfHandler.java
-C:\Users\Alex Banks\workspace\CBI_TV\src\main\java\com\gmail\alexjpbanks14\socketapi\SocketAPIScopeHandler.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\model\RestrictionType.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\socketapi\SocketAPIInstance.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\routes\ControlPanelUsersRoute.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\socketapi\envoker\SocketAPIScopeFlagColorEnvoker.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\exception\session\UserSessionException.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\exception\socket\SocketSessionAPIUnregisteredScopeException.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\socketapi\SocketAPIScopeInstance.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\classinstance\ClassInstanceGoogleCalendarAdapter.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\terminal\Shell.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\restriction\RestrictionUpdater.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\security\PasswordUtil.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\CBI_TV\TestObject.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\routes\ControlPanelSetupRoute.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\socketapi\permission\SocketAPIScopePermission.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\socketapi\handler\SocketAPIScopeRestrictionsHandler.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\model\Restriction.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\events\ClassInstanceUpdateEvent.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\exception\socket\SocketSessionAPIInvalidPermissionException.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\terminal\ShellEventHandler.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\exception\session\UserSessionInvalidPasswordException.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\socketapi\handler\SocketAPIScopeFlagColorHandler.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\exception\socket\SocketSessionConsumedException.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\socketapi\SocketAPIScopeEnvoker.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\webservice\CBIAPI.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\model\ProgramScheduleDay.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\exception\socket\SocketSessionUnknownUUIDException.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\exception\socket\SocketSessionExpiredException.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\routes\TestRoute.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\websocket\SocketAPIHandler.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\socketapi\handler\TestjsadklfjklasdfHandler.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\socketapi\permission\SocketAPIScopeGlobalPermission.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\model\Permission.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\socketapi\envoker\SocketAPIScopeClassUpdateEnvoker.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\routes\LoginRoute.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\socketapi\envoker\SocketAPIScopeLogEventEnvoker.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\exception\api\CBIClassInstanceAPIInvalidResponseException.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\routes\ControlPanelRestrictionsRoute.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\model\User.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\socketapi\envoker\SocketAPIScopeProgramScheduleEnvoker.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\security\SocketAPISessionManager.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\security\SocketAPISession.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\classinstance\ClassInstanceAdapterExpire.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\flagcolor\FlagColorFetcher.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\classinstance\ClassInstanceUpdater.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\model\UserGroup.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\routes\ControlPanelClassesRoute.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\logevent\EventActionGroup.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\socketapi\handler\SocketAPIScopeLogEventHandler.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\events\Event.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\socketapi\envoker\SocketAPIScopeRestrictionsEnvoker.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\routes\ControlPanelDashboardRoute.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\socketapi\SocketAPICommand.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\socketapi\handler\SocketAPIScopeProgramScheduleHandler.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\socketapi\SocketAPICommandFactory.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\logevent\EventActionType.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\routes\ControlPanelLogsRoute.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\template\Template.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\terminal\ShellEvent.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\events\EventManager.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\socketapi\SocketAPIScopeInstanceFactory.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\socketapi\handler\SocketAPIScopeClassUpdateHandler.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\CBI_TV\CBI_TVProperties.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\gson\SocketSessionCommandGson.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\security\SocketAPISessionAuthorizer.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\model\RestrictionState.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\model\LogEvent.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\socketapi\handler\SocketAPIScopeBasicErrorHandler.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\socketapi\SocketAPIScope.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\routes\ControlPanelHelpRoute.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\webservice\GoogleAPI.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\exception\session\UserSessionUnknownUsernameException.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\model\ProgramSchedule.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\routes\TwigRoute.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\model\ClassInstance.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\CBI_TV\CBI_TVRoutes.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\flagcolor\FlagColor.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\security\UserSession.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\CBI_TV\CBI_TV.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\form\FormElement.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\socketapi\SocketAPIScopeEnvokerProxy.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\classinstance\ClassInstanceAdapter.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\CBI_TV\testHandler.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\events\EventType.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\socketapi\envoker\SocketAPIScopeBasicErrorEnvoker.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\events\RestrictionStateHistoryUpdateEvent.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\events\FlagColorUpdateEvent.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\classinstance\ClassInstanceCBIAPIAdapter.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\exception\socket\SocketSessionException.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\exception\api\CBIClassInstanceAPIUnchangedException.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\security\UserSessionManager.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\routes\ControlPanelSettingsRoute.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\events\EventHandler.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\exception\socket\SocketSessionInvalidTokenException.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\CBI_TV\testEnvoker.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\events\RestrictionsUpdateEvent.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\routes\socketinstance\SocketInstanceRoute.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\CBI_TV\Test.java
+C:\Users\alexbanks\eclipse-workspace\cb-tv\src\main\java\com\gmail\alexjpbanks14\socketapi\SocketAPIScopeHandler.java

@@ -1,0 +1,27 @@
+.content{
+	padding-top: 10px;
+	width: 90%;
+	margin: 0 auto;
+}
+.calendarMain{
+	width: 100%;
+	cursor: grab;
+}
+.calendarMain td{
+	border-width: 2px;
+}
+.calendar-highlighted{
+	border-width: 2px;
+	border-style: solid;
+	border-color: black;
+	opacity: 65%;
+}
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}

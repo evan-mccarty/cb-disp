@@ -1,8 +1,47 @@
-
 {% extends 'controlpanelbase.html.twig' %}
-
 {% set title = "Setup" %}
 {% set selected = "setup" %}
-
+{% block head_ %}
+<link rel="stylesheet" href="/css/setup.css" type="text/css" />
+<link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
+<script src="/script/setup.js"></script>
+{% endblock %}
 {% block content %}
+	<table id="calendar-main" class="calendarMain noselect">
+		<tr id="programSetupTableTopper">
+			<th>Mon</th>
+			<th>Tue</th>
+			<th>Wed</th>
+			<th>Thu</th>
+			<th>Fri</th>
+			<th>Sat</th>
+			<th>Sun</th>
+		</tr>
+	</table>
+	<button id="month-left">Left</button>
+	<button id="month-right">Right</button>
+	<br>
+	<input id="jp-enabled" type="checkbox">Jp Enabled<br>
+	<input id="jp-start" type="time">Jp start
+	<input id="jp-end" type="time">Jp End
+	<br>
+	<input id="ap-enabled" type="checkbox">Ap Enabled<br>
+	<input id="ap-start" type="time">Ap start
+	<input id="ap-end" type="time">Ap end
+	<input id="ap-sunset-end" type="checkbox">Ap Sunset End
+	<br>
+	<input id="calendar-color" type="color">Choose Group Color<br>
+	<input id="calendar-text" type="text">Group name<br>
+	
+	<select id="calendar-select">
+		<option id="selected-disabled" value="" selected disabled>Choose Group</option>
+	</select>
+	
+	<button id="calendar-choose">Click to Choose</button>
+	
+	<br>
+	
+	<button id="calendar-save">Save group</button>
+	<button id="calendar-create">Create group</button>
+	<button id="calendar-delete">Delete group</button>
 {% endblock %}

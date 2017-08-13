@@ -58,12 +58,16 @@ import com.gmail.alexjpbanks14.security.UserSessionManager;
 import com.gmail.alexjpbanks14.socketapi.SocketAPIScope;
 import com.gmail.alexjpbanks14.socketapi.SocketAPIScopeInstanceFactory;
 import com.gmail.alexjpbanks14.socketapi.envoker.SocketAPIScopeBasicErrorEnvoker;
+import com.gmail.alexjpbanks14.socketapi.envoker.SocketAPIScopeClassUpdateEnvoker;
 import com.gmail.alexjpbanks14.socketapi.envoker.SocketAPIScopeFlagColorEnvoker;
 import com.gmail.alexjpbanks14.socketapi.envoker.SocketAPIScopeLogEventEnvoker;
+import com.gmail.alexjpbanks14.socketapi.envoker.SocketAPIScopeProgramScheduleEnvoker;
 import com.gmail.alexjpbanks14.socketapi.envoker.SocketAPIScopeRestrictionsEnvoker;
 import com.gmail.alexjpbanks14.socketapi.handler.SocketAPIScopeBasicErrorHandler;
+import com.gmail.alexjpbanks14.socketapi.handler.SocketAPIScopeClassUpdateHandler;
 import com.gmail.alexjpbanks14.socketapi.handler.SocketAPIScopeFlagColorHandler;
 import com.gmail.alexjpbanks14.socketapi.handler.SocketAPIScopeLogEventHandler;
+import com.gmail.alexjpbanks14.socketapi.handler.SocketAPIScopeProgramScheduleHandler;
 import com.gmail.alexjpbanks14.socketapi.handler.SocketAPIScopeRestrictionsHandler;
 import com.gmail.alexjpbanks14.socketapi.permission.SocketAPIScopeGlobalPermission;
 import com.gmail.alexjpbanks14.template.Template;
@@ -143,7 +147,7 @@ public class CBI_TV {
 		
 		setupEventManager();
 		
-		executor = Executors.newScheduledThreadPool(4);
+		executor = Executors.newScheduledThreadPool(2);
 		
 		//TODO make this suck less
 		try {
@@ -152,9 +156,17 @@ public class CBI_TV {
 			e.printStackTrace();
 		}
 		
+		URL url2 = null;
+		
 		URL url = null;
 		try {
 			url = new URL("http://api.community-boating.org/api/jp-class-instances");
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+		
+		try {
+			url2 = new URL("http://api.community-boating.org/api/ap-class-instances");
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
@@ -172,10 +184,12 @@ public class CBI_TV {
 		restrictionUpdater = new RestrictionUpdater(executor, TimeZone.getDefault(), Duration.ofSeconds(20));
 		
 		//TODO fix this please
-		ClassInstanceCBIAPIAdapter cbiAdapter = new ClassInstanceCBIAPIAdapter("cbi_tv_type", "junior", url, TimeZone.getTimeZone(ZonedDateTime.now().plusDays(1).getZone()), Duration.ofMillis(2500));
+		ClassInstanceCBIAPIAdapter cbiAdapter = new ClassInstanceCBIAPIAdapter("cbi_tv_type", "junior", url, TimeZone.getTimeZone(ZonedDateTime.now().getZone()), Duration.ofMillis(2500), Duration.ofMinutes(2));
+		ClassInstanceCBIAPIAdapter cbiAdapter2 = new ClassInstanceCBIAPIAdapter("cbi_tv_type", "adult", url2, TimeZone.getTimeZone(ZonedDateTime.now().getZone()), Duration.ofMillis(2500), Duration.ofMinutes(2));
 		
 		ClassInstanceUpdater updater = new ClassInstanceUpdater(executor, TimeZone.getDefault());
 		updater.addScheduleExpire(0, cbiAdapter);
+		updater.addScheduleExpire(0, cbiAdapter2);
 		//updater.addToUpdate(cbiAdapter);
 		//updater.addSchedule(0L, 6L, TimeUnit.SECONDS);
 		
@@ -266,6 +280,8 @@ public class CBI_TV {
 		scopeFactory.registerScope(SocketAPIScope.FLAG_COLOR, SocketAPIScopeFlagColorHandler.class, SocketAPIScopeFlagColorEnvoker.class, new SocketAPIScopeGlobalPermission());
 		scopeFactory.registerScope(SocketAPIScope.RESTRICTION, SocketAPIScopeRestrictionsHandler.class, SocketAPIScopeRestrictionsEnvoker.class, new SocketAPIScopeGlobalPermission());
 		scopeFactory.registerScope(SocketAPIScope.LOG_EVENT, SocketAPIScopeLogEventHandler.class, SocketAPIScopeLogEventEnvoker.class, new SocketAPIScopeGlobalPermission());
+		scopeFactory.registerScope(SocketAPIScope.CLASS_UPDATE, SocketAPIScopeClassUpdateHandler.class, SocketAPIScopeClassUpdateEnvoker.class, new SocketAPIScopeGlobalPermission());
+		scopeFactory.registerScope(SocketAPIScope.PROGRAM_SCHEDULE, SocketAPIScopeProgramScheduleHandler.class, SocketAPIScopeProgramScheduleEnvoker.class, new SocketAPIScopeGlobalPermission());
 	}
 	
 	public void setupCacheHolders(){

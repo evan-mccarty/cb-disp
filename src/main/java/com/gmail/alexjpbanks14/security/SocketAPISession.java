@@ -90,7 +90,7 @@ public class SocketAPISession{
 		Object response = method.invoke(handler, command.commandArguments);
 		if(command.hasCallback) {
 			Object[] responseParameters;
-			if(method.getReturnType() != null)
+			if(!method.getReturnType().equals(Void.TYPE))
 				responseParameters = new Object[] { response };
 			else
 				responseParameters = new Object[0];

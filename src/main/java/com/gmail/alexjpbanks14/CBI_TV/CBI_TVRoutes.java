@@ -11,7 +11,7 @@ public class CBI_TVRoutes {
 	public static final String SOCKET_API_INSTANCE = "/socket/instance.json";
 	public static final String CONTROL_PANEL_DASHBOARD = "/controlpanel/dashboard.html";
 	public static final String CONTROL_PANEL_RESTRICTIONS = "/controlpanel/restrictions.html";
-	public static final String CONTROL_PANEL_CLASSES = "/controlpanel/restrictions.html";
+	public static final String CONTROL_PANEL_CLASSES = "/controlpanel/classes.html";
 	public static final String CONTROL_PANEL_LOGS = "/controlpanel/logs.html";
 	public static final String CONTROL_PANEL_USERS = "/controlpanel/users.html";
 	public static final String CONTROL_PANEL_SETTINGS = "/controlpanel/settings.html";

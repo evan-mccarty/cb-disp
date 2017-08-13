@@ -30,6 +30,7 @@ public class SocketSessionCommandGson implements JsonDeserializer<SocketAPIComma
 			serialized.add("command_name", new JsonPrimitive(src.commandName));
 		serialized.add("command_scope", new JsonPrimitive(src.scope.name()));
 		JsonArray argumentArray = new JsonArray();
+		System.out.println(src.commandArguments.length);
 		for(Object argument : src.commandArguments){
 			JsonObject argumentObject = new JsonObject();
 			argumentObject.add("argument_class", new JsonPrimitive(argument.getClass().getName()));
@@ -54,6 +55,7 @@ public class SocketSessionCommandGson implements JsonDeserializer<SocketAPIComma
 		String commandName = serialized.get("command_name").getAsString();
 		SocketAPIScope commandScope = SocketAPIScope.valueOf(serialized.get("command_scope").getAsString());
 		JsonArray argumentArray = serialized.getAsJsonArray("command_arguments");
+		System.out.println(argumentArray);
 		Object[] commandArguments = new Object[argumentArray.size()];
 		for(int i = 0; i < commandArguments.length; i++){
 			JsonObject argumentObject = argumentArray.get(i).getAsJsonObject();

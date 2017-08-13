@@ -5,42 +5,56 @@ td{
     vertical-align: top;
     background-color: #d3dded;
 }
-#restrictions table{
-    width: 100%;
-    margin: auto;
-}
-.button-enabled{
-    color: red;
-}
-.button-disabled{
-    color: black;
-}
-.restrictions-custom{
-    display: block;
-}
 .unmarked{
 
+}
+.headerType{
+}
+.hidden{
+	display: none;
 }
 .marked{
 	color: orange;
 }
+.throbbing{
+	margin-left: 30px;
+	margin-top: 8px;
+}
 #program p {
     font: 12pt Arial;
 }
-.restrictionhistory{
-	
-}
-.tableleft{
-	float: left;
-}
-.tableright{
-	float: right;
+.logEvent{
+	overflow-y: scroll;
+	max-height: inherit;
+	height: 100%;
 }
 h3{
     font: 15pt Arial;
     color: #043a91;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+.content{
+	padding: 20px;
+}
+.row{
+	margin-left: 0px;
+	margin-right: 0px;
+}
+#logEventTable{
+	width: 100%;
+}
+.searchHold{
+	line-height: 1;
+}
+.searchButton{
+	max-width: 80px;
+}
+.searchBox{
+	width: auto;
+}
+.searchList{
+	width: auto;
 }
 button{
     font: 1vw arial;
